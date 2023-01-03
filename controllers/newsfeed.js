@@ -1,7 +1,9 @@
 // ===DEPENDENCIES===
 const express = require(`express`)
 const newsfeed = express.Router()
-const Message = require(`../models/productSchema.js`)
+const Message = require(`../models/message.js`)
+
+// ===MIDDLEWARE===,
 const app = express();
 app.use(express.static(`.`))
 
@@ -13,7 +15,11 @@ app.use(express.static(`.`))
 
 // ===ROUTES===
 // Index
-
+newsfeed.get(`/`, (req, res) => {
+    Message.find({}, (err, messages) => {
+        res.render(`index.ejs`, {m: messages})
+    })
+})
 
 // New
 
@@ -33,4 +39,4 @@ app.use(express.static(`.`))
 // Show
 
 
-module.exports = productRouter
+module.exports = newsfeed
