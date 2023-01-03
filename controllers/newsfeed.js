@@ -17,7 +17,7 @@ app.use(express.static(`.`))
 // Index
 newsfeed.get(`/`, (req, res) => {
     Message.find({}, (err, messages) => {
-        res.render(`index.ejs`, {m: messages})
+        res.render(`index.ejs`, {m: messages, pageName: `Index Page`})
     })
 })
 
