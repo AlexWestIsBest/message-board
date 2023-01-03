@@ -21,7 +21,7 @@ app.use(express.static(`.`))
 const PORT = process.env.PORT
 const DATABASE_URI = process.env.DATABASE_URI
 const db = mongoose.connection
-// mongoose.set(`strictQuery`, true)
+mongoose.set(`strictQuery`, true)
 
 // Connection
 mongoose.connect(DATABASE_URI, {
