@@ -3,8 +3,8 @@ const Schema = mongoose.Schema
 
 const messageSchema = new Schema({
     name: String,
-    text: String,
     image: String,
+    text: String,
 }, {timestamps: true})
 
 module.exports = mongoose.model(`Message`, messageSchema)

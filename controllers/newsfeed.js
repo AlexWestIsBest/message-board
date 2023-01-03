@@ -7,8 +7,6 @@ const Message = require(`../models/message.js`)
 const app = express();
 app.use(express.static(`.`))
 
-
-
 // ===SEED ROUTE===
 const seedData = require(`../seedData.js`)
 newsfeed.get(`/seed`, (req, res) => {
@@ -24,7 +22,7 @@ newsfeed.get(`/seed`, (req, res) => {
 // Index
 newsfeed.get(`/`, (req, res) => {
     Message.find({}, (err, messages) => {
-        res.render(`index.ejs`, {m: messages, pageName: `Index Page`})
+        res.render(`index.ejs`, {messages, pageName: `Index Page`})
     })
 })
 

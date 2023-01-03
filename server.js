@@ -6,8 +6,6 @@ const Message = require(`./models/message.js`)
 const methodOverride = require(`method-override`)
 require(`dotenv`).config()
 
-
-
 // ===MIDDLEWARE===
 const app = express();
 app.use(methodOverride(`_method`))
@@ -39,8 +37,6 @@ db.on('disconnected', () => console.error(`[Server error] Mongo disconnected`))
 // ===ROUTES===
 const newsfeedController = require(`./controllers/newsfeed.js`)
 app.use(`/newsfeed`, newsfeedController)
-
-
 
 // ===LISTENER===
 app.listen(PORT, () => console.log(`\x1b[35m  %s\x1b[0m`, `[Server startup] Express is listening on port: ${PORT}`))

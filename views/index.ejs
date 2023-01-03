@@ -1,5 +1,18 @@
 <%- include('./partials/head.ejs') %>
 <body>
-    <h1>Welcome to the test page</h1>
+    <h1>Message Board</h1>
+    <% messages.forEach(m => { %> 
+        <fieldset>
+            <% if (m.name.length !== 0) { %>
+                <legend><%= m.name %></legend>
+            <% } %> 
+            <% if (m.image.length !== 0) { %>
+                <img src="<%= m.image %>" width="300px">
+            <% } %>             <% if (m.text.length !== 0) { %>
+                <div><%= m.text %></div>
+            <% } %> 
+
+            </fieldset><br><br><br>
+    <% }) %> 
 </body>
 </html>
