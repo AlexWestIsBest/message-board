@@ -10,6 +10,13 @@ app.use(express.static(`.`))
 
 
 // ===SEED ROUTE===
+const seedData = require(`../seedData.js`)
+newsfeed.get(`/seed`, (req, res) => {
+    Message.deleteMany({}, (err, allMessages) => {})
+    Message.create(seedData, (err, data) => {
+        res.redirect(`/newsfeed`)
+    })
+})
 
 
 
