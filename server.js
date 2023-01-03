@@ -1,10 +1,9 @@
 // ===DEPENDENCIES===
-const express = require(`express`);
-const mongoose = require(`mongoose`);
+const express = require(`express`)
+const mongoose = require(`mongoose`)
 const Message = require(`./models/message.js`)
 // const seedData = require(`./seedData`)
 const methodOverride = require(`method-override`)
-const newsfeed = express.Router()
 require(`dotenv`).config()
 
 
@@ -19,20 +18,21 @@ app.use(express.static(`.`))
 
 // ===DATABASE===
 // Configuration
-const PORT = process.env.PORT;
-const DATABASE_URI = process.env.DATABASE_URI;
-const db = mongoose.connection;
+const PORT = process.env.PORT
+const DATABASE_URI = process.env.DATABASE_URI
+const db = mongoose.connection
+mongoose.set(`strictQuery`, true)
 
 // Connection
 mongoose.connect(DATABASE_URI, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
-});
+})
 
 // Connection Error/Success
-db.on('error', (err) => console.log(err.message + ' is MongoDB not running?'));
-db.on('connected', () => console.log('[Server startup] Mongo connected'));
-db.on('disconnected', () => console.log('[Server error] Mongo disconnected'));
+db.on('error', (err) => console.error(err.message + ` is MongoDB not running?`))
+db.on('connected', () => console.log(`\u001B[35m  [Server startup] Mongo connected`))
+db.on('disconnected', () => console.error(`[Server error] Mongo disconnected`))
 
 
 
@@ -43,4 +43,4 @@ db.on('disconnected', () => console.log('[Server error] Mongo disconnected'));
 
 
 // ===LISTENER===
-app.listen(PORT, () => console.log(`[Server startup] Express is listening on port: ${PORT}`));
+app.listen(PORT, () => console.log(`\u001B[35m  [Server startup] Express is listening on port: ${PORT}`))
