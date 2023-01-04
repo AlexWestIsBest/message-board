@@ -16,8 +16,14 @@
                 </fieldset>
             </a>
             <div class="buttonArray">
-                <div class="editButton"><a href="#">Edit</a></div>
-                <div class="deleteButton"><a href="#">Delete</a></div>
+                <div class="editButton">
+                    <a href="#">Edit</a>
+                </div>
+                <div class="deleteButton">
+                    <form action="/newsfeed/<%= m._id %>?_method=DELETE" method="POST">
+                        <input type="image" src="https://cdn-icons-png.flaticon.com/512/5369/5369422.png" alt="Delete" height="32px">
+                    </form>
+                </div>
             </div>
         <% }) %> 
 </body>

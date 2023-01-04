@@ -29,7 +29,11 @@ newsfeed.get(`/`, (req, res) => {
 // New
 
 // Delete
-
+newsfeed.delete(`/:id`, (req, res) => {
+    Message.findByIdAndDelete(req.params.id, (err, data) => {
+        res.redirect(`/newsfeed`)
+    })
+})
 // Update
 
 // Create

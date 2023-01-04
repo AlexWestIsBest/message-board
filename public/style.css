@@ -45,8 +45,8 @@ img {
 .editButton, .deleteButton {
     background-color: #e0e0e0;
     box-shadow: 0.1em 0em 0.2em #9d9d9d;
-    border-radius: 0.1em;
+    border-radius: 0.7em;
     font-size: 2em;
-    padding: 0em 0.5em;
+    padding: 0.0em 0.2em;
     margin: -0.55em -3em 1em 3.2em;
 }
