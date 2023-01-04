@@ -12,14 +12,12 @@
             <div><%= m.text %></div>
         <% } %>
     </fieldset>
-    <% if (m.name.length === 0) { %>
-        This post was anonymous
-    <% } %> 
-    <% if (m.image.length === 0) { %>
-        This post has no image
-    <% } %>
-    <% if (m.text.length === 0) { %>
-        This post has no text
-    <% } %>
+    <div class="buttonArray">
+        <a href="javascript:history.back()"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/5166/5166297.png" alt="Home"></a>
+        <a href="/newsfeed/<%= m._id %>/edit"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/5166/5166607.png" alt="Edit"></a>
+        <form action="/newsfeed/<%= m._id %>?_method=DELETE" method="POST">
+            <input type="image" class="icon" src="https://cdn-icons-png.flaticon.com/128/5166/5166625.png" alt="Delete">
+        </form>
+    </div>
 </body>
 </html>

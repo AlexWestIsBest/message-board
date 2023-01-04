@@ -1,13 +1,14 @@
 <%- include(`./partials/head.ejs`) %>
 <body>
     <h1>Edit Message</h1>
-        <fieldset>
-            <form action="/newsfeed/<%= m._id %>?_method=PUT" method="POST">
+        <form action="/newsfeed/<%= m._id %>?_method=PUT" method="POST">
+            <fieldset>
                 Name: <input type="text" name="name" value="<%= m.name %>"><br>
                 Image: <input type="text" name="image" value="<%= m.image %>"><br>
                 Text: <input type="text" name="text" value="<%= m.text %>"><br>
-                <input type="submit" name="" value="Submit edits"/>
+            </fieldset>
+            <a href="javascript:history.back()"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/5166/5166297.png" alt="Home"></a>
+            <input type="image" class="icon" src="https://cdn-icons-png.flaticon.com/512/5166/5166470.png" alt="Heart">
             </form>
-        </fieldset>
 </body>
 </html>
