@@ -17,11 +17,11 @@
             </a>
             <div class="buttonArray">
                 <div class="editButton">
-                    <a href="#">Edit</a>
+                    <a href="/newsfeed/<%= m._id %>/edit"><img src="https://cdn-icons-png.flaticon.com/512/5380/5380083.png" alt="Edit" height="22px"></a>
                 </div>
                 <div class="deleteButton">
                     <form action="/newsfeed/<%= m._id %>?_method=DELETE" method="POST">
-                        <input type="image" src="https://cdn-icons-png.flaticon.com/512/5369/5369422.png" alt="Delete" height="32px">
+                        <input type="image" src="https://cdn-icons-png.flaticon.com/512/5369/5369422.png" alt="Delete" height="22px">
                     </form>
                 </div>
             </div>

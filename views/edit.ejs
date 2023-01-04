@@ -1,0 +1,13 @@
+<%- include(`./partials/head.ejs`) %>
+<body>
+    <h1>Edit Message</h1>
+        <fieldset>
+            <form action="/newsfeed/<%= m._id %>?_method=PUT" method="POST">
+                Name: <input type="text" name="name" value="<%= m.name %>"><br>
+                Image: <input type="text" name="image" value="<%= m.image %>"><br>
+                Text: <input type="text" name="text" value="<%= m.text %>"><br>
+                <input type="submit" name="" value="Submit edits"/>
+            </form>
+        </fieldset>
+</body>
+</html>

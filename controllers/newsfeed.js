@@ -34,11 +34,27 @@ newsfeed.delete(`/:id`, (req, res) => {
         res.redirect(`/newsfeed`)
     })
 })
+
 // Update
+newsfeed.put(`/:id`, (req, res) => {
+    Message.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {new: true},
+        (err, updatedMessage) => {
+            res.redirect(`/newsfeed/${req.params.id}`)
+        }
+    )
+})
 
 // Create
 
 // Edit
+newsfeed.get(`/:id/edit`, (req, res) => {
+    Message.findById(req.params.id, (err, message) => {
+        res.render(`edit.ejs`, {m: message, pageName: `Edit Page`})
+    })
+})
 
 // Show
 newsfeed.get(`/:id`, (req, res) => {
