@@ -28,20 +28,19 @@ newsfeed.get(`/`, (req, res) => {
 
 // New
 
-
 // Delete
-
 
 // Update
 
-
 // Create
-
 
 // Edit
 
-
 // Show
-
+newsfeed.get(`/:id`, (req, res) => {
+    Message.findById(req.params.id, (err, message) => {
+        res.render(`show.ejs`, {m: message, pageName: `Show Page`})
+    })
+})
 
 module.exports = newsfeed

@@ -1,22 +1,52 @@
 body {
     background-color: #e0e0e0;
+    color: rgb(9, 30, 61);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 1em; /* This is the master size adjuster for various screen sizes */
 }
 
-fieldset {
-    border: #ffffff;
-    border-radius: 20px;
+.indexLinks {
+    text-decoration: none;
+    color: inherit;
+}
+
+fieldset {  
+    border-radius: 2em;
     background: #e0e0e0;
-    box-shadow:  5px 5px 10px #9d9d9d, -5px -5px 10px #ffffff;
-    width: 50%;
-    max-width: 800px;
-    padding: 20px;
+    border: none;
+    box-shadow: 0.4em 0.4em 0.8em #9d9d9d, -0.4em -0.4em 0.8em #ffffff;
+    font-size: 1em;
+    max-width: 40em;
+    padding: 0.375em 1.5em 3em 1.5em;
+    margin: 0em 1em;
 }
 
 legend {
+    background-color: #e0e0e0;
+    box-shadow: 0.1em 0em 0.2em #9d9d9d;
+    border-radius: 0.1em;
+    font-size: 2em;
     text-align: left;
-    padding: 0px 10px;
+    padding: 0em 0.5em;
+}
+
+img {
+    border-radius: 0.5em;
+}
+
+.buttonArray {
+    display: flex;
+    flex-direction: row;
+}
+
+.editButton, .deleteButton {
+    background-color: #e0e0e0;
+    box-shadow: 0.1em 0em 0.2em #9d9d9d;
+    border-radius: 0.1em;
+    font-size: 2em;
+    padding: 0em 0.5em;
+    margin: -0.55em -3em 1em 3.2em;
 }

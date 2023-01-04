@@ -28,9 +28,9 @@ mongoose.connect(DATABASE_URI, {
 })
 
 // Connection Error/Success
-db.on('error', (err) => console.error(err.message + ` is MongoDB not running?`))
+db.on('error', (err) => console.log(err.message + ` is MongoDB not running?`))
 db.on('connected', () => console.log(`\x1b[35m  %s\x1b[0m`, `[Server startup] Mongo connected`))
-db.on('disconnected', () => console.error(`[Server error] Mongo disconnected`))
+db.on('disconnected', () => console.log(`[Server error] Mongo disconnected`))
 
 
 

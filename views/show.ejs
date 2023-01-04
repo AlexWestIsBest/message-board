@@ -1,0 +1,25 @@
+<%- include(`./partials/head.ejs`) %>
+<body>
+    <h1>View Post</h1>
+    <fieldset>
+        <% if (m.name.length !== 0) { %>
+            <legend><%= m.name %></legend>
+        <% } %> 
+        <% if (m.image.length !== 0) { %>
+            <img src="<%= m.image %>" width="100%">
+        <% } %>
+        <% if (m.text.length !== 0) { %>
+            <div><%= m.text %></div>
+        <% } %>
+    </fieldset>
+    <% if (m.name.length === 0) { %>
+        This post was anonymous
+    <% } %> 
+    <% if (m.image.length === 0) { %>
+        This post has no image
+    <% } %>
+    <% if (m.text.length === 0) { %>
+        This post has no text
+    <% } %>
+</body>
+</html>
