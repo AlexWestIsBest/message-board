@@ -1,3 +1,7 @@
+h1 {
+    font-size: 3em;
+}
+
 body {
     background-color: #e0e0e0;
     color: rgb(9, 30, 61);
@@ -5,6 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1em; /* This is the master size adjuster for various screen sizes */
 }
 
@@ -42,9 +47,9 @@ img {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: -0.5em 1em 1em 1em;
+    margin: 0.625em 1em 3em 1em;
 }
 
 .icon {
-    max-height: 4em;
+    max-height: 3em;
 }
