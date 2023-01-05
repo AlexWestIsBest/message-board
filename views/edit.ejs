@@ -3,19 +3,17 @@
     <h1>Edit Post</h1>
     <form action="/newsfeed/<%= m._id %>?_method=PUT" method="POST">
         <fieldset>
-            Name: <input type="text" name="name" value="<%= m.name %>"><br>
-            Image: <input type="url" name="image" value="<%= m.image %>"><br>
-            Text: <textarea type="text" name="text" value="<%= m.text %>"></textarea>
             <br>
+            <input type="text" name="name" placeholder="What's your name?" autofocus maxlength="20" value="<%= m.name %>">
             <br>
-            <input type="text" name="name" placeholder="What's your name?" autofocus maxlength="20"><br>
-            <input type="url" name="image" placeholder="Paste an image URL"><br>
-            <textarea rows="3" cols="30" name="text" placeholder="Write something" maxlength="280"></textarea>
+            <input type="url" name="image" placeholder="Paste an image URL" value="<%= m.image %>">
+            <br>
+            <textarea rows="3" cols="30" name="text" placeholder="Write something" maxlength="280"><%= m.text %></textarea>
             <br>
             Drag bottom right corner to enlarge ↑
         </fieldset>
         <div class="buttonArray">
-            <a href="javascript:history.back()">
+            <a href="/newsfeed">
                 <img class="icon" src="https://cdn-icons-png.flaticon.com/128/9283/9283237.png" alt="Back">
             </a>
             <input type="image" class="icon" src="https://cdn-icons-png.flaticon.com/128/9283/9283072.png" alt="Save changes">
