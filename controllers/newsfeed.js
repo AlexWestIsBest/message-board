@@ -27,9 +27,7 @@ newsfeed.get(`/`, (req, res) => {
 })
 
 // New
-newsfeed.get(`/new`, (req, res) => {
-    res.render(`new.ejs`, {pageName: `Create Post`})
-})
+
 
 // Delete
 newsfeed.delete(`/:id`, (req, res) => {
