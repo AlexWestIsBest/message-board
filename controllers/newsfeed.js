@@ -21,8 +21,8 @@ newsfeed.get(`/seed`, (req, res) => {
 // ===ROUTES===
 // Index
 newsfeed.get(`/`, (req, res) => {
-    Message.find({}, (err, messages) => {
-        res.render(`index.ejs`, {messages, pageName: `Newsfeed`})
+    Message.find({}, (err, m) => {
+        res.render(`index.ejs`, {m, pageName: `Newsfeed`})
     })
 })
 
@@ -45,7 +45,7 @@ newsfeed.put(`/:id`, (req, res) => {
         req.body,
         {new: true},
         (err, updatedMessage) => {
-            res.redirect(`/newsfeed/${req.params.id}`)
+            res.redirect(`/newsfeed`)
         }
     )
 })

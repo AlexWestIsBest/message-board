@@ -1,7 +1,19 @@
 <%- include(`./partials/head.ejs`) %>
 <body>
     <h1>Edit Post</h1>
-    <form action="/newsfeed/<%= m._id %>?_method=PUT" method="POST">
+    <fieldset>
+        <% if (m.name.length !== 0) { %>
+            <legend><%= m.name %></legend>
+        <% } %> 
+        <% if (m.image.length !== 0) { %>
+            <img src="<%= m.image %>" width="100%">
+        <% } %>
+        <% if (m.text.length !== 0) { %>
+            <div><%= m.text %></div>
+        <% } %>
+    </fieldset>
+    <br><br>
+    <form id="editMessage" action="/newsfeed/<%= m._id %>?_method=PUT" method="POST">
         <fieldset>
             <br>
             <input type="text" name="name" placeholder="What's your name?" autofocus maxlength="20" value="<%= m.name %>">
@@ -12,12 +24,12 @@
             <br>
             Drag bottom right corner to enlarge ↑
         </fieldset>
-        <div class="buttonArray">
-            <a href="/newsfeed">
-                <img class="icon" src="https://cdn-icons-png.flaticon.com/128/9283/9283237.png" alt="Back">
-            </a>
-            <input type="image" class="icon" src="https://cdn-icons-png.flaticon.com/128/9283/9283072.png" alt="Save changes">
-        </div>
     </form>
+    <div class="buttonArray">
+        <a href="/newsfeed">
+            <img class="icon" src="https://cdn-icons-png.flaticon.com/128/9283/9283081.png" alt="Cancel">
+        </a>
+        <input form="editMessage" type="image" class="icon" src="https://cdn-icons-png.flaticon.com/128/9283/9283072.png" alt="Save changes">
+    </div>
 </body>
 </html>

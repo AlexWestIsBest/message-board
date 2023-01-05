@@ -1,21 +1,30 @@
 <%- include(`./partials/head.ejs`) %>
 <body>
     <h1>Message Board</h1>
-    <a href="/newsfeed/new">
-        <img class="icon" src="https://cdn-icons-png.flaticon.com/128/9282/9282997.png" alt="Create new post">
-    </a>
-    <br><br>
-    <% messages.forEach(m => { %> 
-        <a href="/newsfeed/<%= m._id %>" class="indexLinks">
+    <form id="postNewMessage" action="/newsfeed" method="POST">
+        <fieldset>
+            <br>
+            <input type="text" name="name" placeholder="What's your name?" maxlength="20"><br>
+            <input type="text" name="image" placeholder="Paste an image URL"><br>
+            <textarea rows="3" cols="30" name="text" placeholder="Write something" maxlength="280"></textarea>
+            <br>
+            Drag bottom right corner to enlarge ↑
+        </fieldset>
+    </form>
+    <div class="buttonArray">
+        <input form="postNewMessage" type="image" class="icon" src="https://cdn-icons-png.flaticon.com/128/9282/9282997.png" alt="Post Message">
+    </div>
+    <% for (let i = m.length - 1; i >= 0; i--) { %>
+        <a href="/newsfeed/<%= m[i]._id %>" class="indexLinks">
             <fieldset>
-                <% if (m.name.length !== 0) { %>
-                    <legend><%= m.name %></legend>
+                <% if (m[i].name.length !== 0) { %>
+                    <legend><%= m[i].name %></legend>
                 <% } %> 
-                <% if (m.image.length !== 0) { %>
-                    <img src="<%= m.image %>" width="100%">
+                <% if (m[i].image.length !== 0) { %>
+                    <img src="<%= m[i].image %>" width="100%">
                 <% } %>
-                <% if (m.text.length !== 0) { %>
-                    <div><%= m.text %></div>
+                <% if (m[i].text.length !== 0) { %>
+                    <div><%= m[i].text %></div>
                 <% } %>
             </fieldset>
         </a>
@@ -26,15 +35,14 @@
             <a href="#">
                 <img class="icon" src="https://cdn-icons-png.flaticon.com/128/9283/9283066.png" alt="Comment">
             </a>
-            <a href="/newsfeed/<%= m._id %>/edit">
+            <a href="/newsfeed/<%= m[i]._id %>/edit">
                 <img class="icon" src="https://cdn-icons-png.flaticon.com/128/9283/9283137.png" alt="Edit">
             </a>
-            <form action="/newsfeed/<%= m._id %>?_method=DELETE" method="POST">
-                <input type="image" class="icon" src="https://cdn-icons-png.flaticon.com/128/9283/9283081.png" alt="Delete">
+            <form action="/newsfeed/<%= m[i]._id %>?_method=DELETE" method="POST">
+                <input type="image" class="icon" src="https://cdn-icons-png.flaticon.com/128/9283/9283454.png" alt="Delete">
             </form>
         </div>
-    <% }) %> 
-    <p>By Alex Westerlund</p>
-    <p>Icons by <a href="https://www.flaticon.com/authors/ta-if-tkn">TA iF TKN</a></p>
+    <% } %> 
+    <p>By Alex Westerlund  |  Icons by <a href="https://www.flaticon.com/packs/user-interface-2600" target="_blank">kumakamu</a></p></p>
 </body>
 </html>
