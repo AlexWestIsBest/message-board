@@ -37,6 +37,7 @@ db.on('disconnected', () => console.log(`[Server error] Mongo disconnected`))
 // ===ROUTES===
 const newsfeedController = require(`./controllers/newsfeed.js`)
 app.use(`/newsfeed`, newsfeedController)
+app.get(`/`, (req, res) => {res.redirect(`/newsfeed`)})
 
 // ===LISTENER===
 app.listen(PORT, () => console.log(`\x1b[35m  %s\x1b[0m`, `[Server startup] Express is listening on port: ${PORT}`))

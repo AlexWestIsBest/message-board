@@ -20,7 +20,7 @@ newsfeed.get(`/seed`, (req, res) => {
 
 // ===ROUTES===
 // Index
-newsfeed.get(``, (req, res) => {
+newsfeed.get(`/`, (req, res) => {
     Message.find({}, (err, messages) => {
         res.render(`index.ejs`, {messages, pageName: `Newsfeed`})
     })

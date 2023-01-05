@@ -3,12 +3,17 @@
     <h1>Create a Post</h1>
         <form action="/newsfeed" method="POST">
             <fieldset>
-                Name: <input type="text" name="name" placeholder="Name"><br>
-                Image: <input type="text" name="image" placeholder="Image URL"><br>
-                Text: <input type="text" name="text" placeholder="Description"><br>
+                <br>
+                <input type="text" name="name" placeholder="What's your name?" autofocus maxlength="20"><br>
+                <input type="text" name="image" placeholder="Paste an image URL"><br>
+                <textarea rows="3" cols="30" name="text" placeholder="Write something" maxlength="280"></textarea>
+                <br>
+                Drag bottom right corner to enlarge ↑
             </fieldset>
             <div class="buttonArray">
-                <a href="javascript:history.back()"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/9283/9283237.png" alt="Back"></a>
+                <a href="javascript:history.back()">
+                    <img class="icon" src="https://cdn-icons-png.flaticon.com/128/9283/9283237.png" alt="Back">
+                </a>
                 <input type="image" class="icon" src="https://cdn-icons-png.flaticon.com/128/9283/9283072.png" alt="Create post">
             </div>
         </form>
