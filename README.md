@@ -10,7 +10,7 @@
 
 ## Getting Started
 
-[Find the game here](https://thawing-atoll-91455.herokuapp.com/newsfeed)
+[Find the board here here](https://thawing-atoll-91455.herokuapp.com/newsfeed)
 
 Visitors are presented with a message board feed in order of newest to oldest. The message board includes text posts, image posts, and combination posts, rendering them accordingly.
 
