@@ -1,6 +1,6 @@
 <%- include(`./partials/head.ejs`) %>
 <body>
-    <h1>Edit Message</h1>
+    <h1>Edit Post</h1>
         <form action="/newsfeed/<%= m._id %>?_method=PUT" method="POST">
             <fieldset>
                 Name: <input type="text" name="name" value="<%= m.name %>"><br>

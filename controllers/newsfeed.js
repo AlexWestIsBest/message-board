@@ -22,11 +22,14 @@ newsfeed.get(`/seed`, (req, res) => {
 // Index
 newsfeed.get(``, (req, res) => {
     Message.find({}, (err, messages) => {
-        res.render(`index.ejs`, {messages, pageName: `Index Page`})
+        res.render(`index.ejs`, {messages, pageName: `Newsfeed`})
     })
 })
 
 // New
+newsfeed.get(`/new`, (req, res) => {
+    res.render(`new.ejs`, {pageName: `Create Post`})
+})
 
 // Delete
 newsfeed.delete(`/:id`, (req, res) => {
@@ -48,18 +51,23 @@ newsfeed.put(`/:id`, (req, res) => {
 })
 
 // Create
+newsfeed.post(`/`, (req, res) => {
+    Message.create(req.body, (err, newMessage) => {
+        res.redirect(`/newsfeed`)
+    })
+})
 
 // Edit
 newsfeed.get(`/:id/edit`, (req, res) => {
     Message.findById(req.params.id, (err, message) => {
-        res.render(`edit.ejs`, {m: message, pageName: `Edit Page`})
+        res.render(`edit.ejs`, {m: message, pageName: `Edit Post`})
     })
 })
 
 // Show
 newsfeed.get(`/:id`, (req, res) => {
     Message.findById(req.params.id, (err, message) => {
-        res.render(`show.ejs`, {m: message, pageName: `Show Page`})
+        res.render(`show.ejs`, {m: message, pageName: `View Post`})
     })
 })
 
